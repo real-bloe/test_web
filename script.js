@@ -29,23 +29,26 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     score++;
     document.getElementById("feedback").textContent = "Correct! Well done.";
-    document.getElementById("feedback").style.color = "green";
+    document.getElementById("feedback").style.color = "#4CAF50";
   } else {
     document.getElementById("feedback").textContent = `Wrong! The correct answer is "${correctAnswer}".`;
-    document.getElementById("feedback").style.color = "red";
+    document.getElementById("feedback").style.color = "#f44336";
   }
 
   document.getElementById("score").textContent = `Score: ${score}`;
 
+  // Make feedback fade in
+  document.getElementById("feedback").style.opacity = 1;
+
   // Move to the next question or end the quiz
   currentQuestion++;
   if (currentQuestion < hiraganaTable.length) {
-    setTimeout(loadQuestion, 1000); // Load next question after 1 second
+    setTimeout(loadQuestion, 1500); // Load next question after 1.5 seconds
   } else {
     setTimeout(() => {
       alert("Quiz complete! Your final score is " + score);
       location.reload(); // Reload page to restart the quiz
-    }, 1000);
+    }, 1500);
   }
 }
 
