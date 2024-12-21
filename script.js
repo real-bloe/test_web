@@ -11,7 +11,6 @@ const hiraganaTable = [
   { character: "こ", pronunciation: "ko" },
   // Add more hiragana characters here
 ];
-
 let currentQuestion = 0;
 let score = 0;
 
@@ -39,7 +38,6 @@ function checkAnswer() {
 
   // Make feedback fade in
   document.getElementById("feedback").style.opacity = 1;
-
   // Move to the next question or end the quiz
   currentQuestion++;
   if (currentQuestion < hiraganaTable.length) {
