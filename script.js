@@ -1,13 +1,53 @@
-document.getElementById('jokeButton').addEventListener('click', function() {
-  const jokes = [
-    "Why don’t skeletons fight each other? They don’t have the guts!",
-    "I told my wife she was drawing her eyebrows too high. She looked surprised.",
-    "I told my computer I needed a break, and now it won’t stop sending me Kit-Kats!",
-    "I’m reading a book on anti-gravity. It’s impossible to put down!",
-    "Why do cows wear bells? Because their horns don’t work!"
-  ];
+const hiraganaTable = [
+  { character: "あ", pronunciation: "a" },
+  { character: "い", pronunciation: "i" },
+  { character: "う", pronunciation: "u" },
+  { character: "え", pronunciation: "e" },
+  { character: "お", pronunciation: "o" },
+  { character: "か", pronunciation: "ka" },
+  { character: "き", pronunciation: "ki" },
+  { character: "く", pronunciation: "ku" },
+  { character: "け", pronunciation: "ke" },
+  { character: "こ", pronunciation: "ko" },
+  // Add more hiragana characters here
+];
 
-  const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-  
-  document.getElementById('joke').innerText = randomJoke;
-});
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const question = hiraganaTable[currentQuestion];
+  document.getElementById("hiragana").textContent = question.character;
+  document.getElementById("userAnswer").value = "";
+  document.getElementById("feedback").textContent = "";
+}
+
+function checkAnswer() {
+  const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
+  const correctAnswer = hiraganaTable[currentQuestion].pronunciation;
+
+  if (userAnswer === correctAnswer) {
+    score++;
+    document.getElementById("feedback").textContent = "Correct! Well done.";
+    document.getElementById("feedback").style.color = "green";
+  } else {
+    document.getElementById("feedback").textContent = `Wrong! The correct answer is "${correctAnswer}".`;
+    document.getElementById("feedback").style.color = "red";
+  }
+
+  document.getElementById("score").textContent = `Score: ${score}`;
+
+  // Move to the next question or end the quiz
+  currentQuestion++;
+  if (currentQuestion < hiraganaTable.length) {
+    setTimeout(loadQuestion, 1000); // Load next question after 1 second
+  } else {
+    setTimeout(() => {
+      alert("Quiz complete! Your final score is " + score);
+      location.reload(); // Reload page to restart the quiz
+    }, 1000);
+  }
+}
+
+// Initialize the quiz
+loadQuestion();
