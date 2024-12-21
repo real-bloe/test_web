@@ -7,46 +7,53 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  background-color: #f9f9f9;
   text-align: center;
-  color: #333;
 }
 
 header {
-  background-color: #ffeb3b;
+  background-color: #4CAF50;
+  color: white;
   padding: 20px;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #3f51b5;
 }
 
 main {
   margin-top: 30px;
 }
 
+h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
 button {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
-  border: none;
-  padding: 15px 30px;
+  padding: 10px 20px;
   font-size: 1.2em;
   cursor: pointer;
-  border-radius: 8px;
+  border: none;
+  border-radius: 5px;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-#jokeSection {
+#feedback {
+  font-size: 1.2em;
   margin-top: 20px;
+  color: #ff0000;
 }
 
-#footer {
-  margin-top: 40px;
-  font-size: 1.1em;
-  color: #777;
+#score {
+  font-size: 1.5em;
+  margin-top: 30px;
+  color: #333;
 }
-
