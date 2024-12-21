@@ -7,21 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Hiragana Quiz</h1>
-    <p>Type the correct pronunciation of the Hiragana character shown below:</p>
-  </header>
+  <div id="container">
+    <header>
+      <h1>Hiragana Quiz</h1>
+      <p>How well do you know Hiragana? Type the pronunciation of the character shown below:</p>
+    </header>
 
-  <main>
-    <div id="quiz">
-      <h2 id="hiragana"></h2>
-      <input type="text" id="userAnswer" placeholder="Type pronunciation">
-      <button onclick="checkAnswer()">Submit</button>
-      <p id="feedback"></p>
-    </div>
-    <p id="score">Score: 0</p>
-  </main>
+    <main>
+      <div id="quiz-container">
+        <h2 id="hiragana"></h2>
+        <input type="text" id="userAnswer" placeholder="Type pronunciation" autofocus>
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+      </div>
+      <div id="score-container">
+        <p id="score">Score: 0</p>
+      </div>
+    </main>
 
+    <footer>
+      <p>Made with ❤️ by [Your Name]</p>
+    </footer>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
