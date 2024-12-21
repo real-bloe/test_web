@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funny Website</title>
+  <title>Hiragana Quiz</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to the Funniest Website!</h1>
-    <p>Get ready to laugh until your sides hurt!</p>
+    <h1>Hiragana Quiz</h1>
+    <p>Type the correct pronunciation of the Hiragana character shown below:</p>
   </header>
 
   <main>
-    <button id="jokeButton">Tell me a joke!</button>
-    <div id="jokeSection">
-      <p id="joke">Press the button to hear a joke!</p>
+    <div id="quiz">
+      <h2 id="hiragana"></h2>
+      <input type="text" id="userAnswer" placeholder="Type pronunciation">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="feedback"></p>
     </div>
-    <p id="footer">Made with love... and maybe a little too much coffee.</p>
+    <p id="score">Score: 0</p>
   </main>
 
   <script src="script.js"></script>
